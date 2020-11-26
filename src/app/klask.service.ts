@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { read, write } from 'clipboardy';
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +34,15 @@ export class KlaskService {
         ...this.trialTourneyGameResults
         , result
       ];
+
+      this.hackToClipboard(this.trialTourneyGameResults);
     }
+  }
+
+  hackToClipboard = async (data) => {
+    await write(JSON.stringify(data));
+    //const dataRead = await read();
+    //console.log(dataRead);
   }
 
   getTournamentGameResults(tourneyId: string) {
