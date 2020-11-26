@@ -17,4 +17,8 @@ export class HomePage implements OnInit {
   }
 
   registrationCode = "";
+
+  hackFromClipboard = () => {
+    this.klaskSvc.hackFromClipboard();
+  }
 }

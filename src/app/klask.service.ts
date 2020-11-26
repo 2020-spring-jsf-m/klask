@@ -45,6 +45,13 @@ export class KlaskService {
     //console.log(dataRead);
   }
 
+  hackFromClipboard = async () => {
+    const data = await read();
+    console.log(data);
+
+    this.trialTourneyGameResults = JSON.parse(data);
+  }
+
   getTournamentGameResults(tourneyId: string) {
 
     if (tourneyId == '-1') {
